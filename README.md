@@ -36,5 +36,5 @@ My model consisted of the following layers based on LeNet architecture.
 
 ## Visualizing the Neural Network
 
-Vizualizing the parameters of the first convolution layer for stop sign looks like this
+Vizualizing the parameters of the first convolution layer for yield sign looks like this
 ![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/visualize.png)
