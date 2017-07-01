@@ -3,8 +3,13 @@
 
 Overview
 ---
+Download the dataset to run the network from https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5898cd6f_traffic-signs-data/traffic-signs-data.zip
+
+and rename the extracted zip file to dataset in the cloned repo
+
 Basic LeNet, traffic sign classifier is build:
-Get around 95% validation and 91.6% test accuracy
+Gives validation accuracy around 95.4% and test accuracy 94% 
+with learning rate = 0.001 for 100 epochs
 
 ## Architecture
 
@@ -29,6 +34,7 @@ My model consisted of the following layers based on LeNet architecture.
 | Softmax               		|
 </pre>
 
-##Visualizing the Neural Network
+## Visualizing the Neural Network
 
 Vizualizing the parameters of the first convolution layer for stop sign looks like this
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/visualize.png)
