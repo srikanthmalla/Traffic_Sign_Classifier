@@ -92,17 +92,20 @@ My final model results were:
 * test set accuracy of 93.58
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+* What was the first architecture that was tried and why was it chosen? 
+  LeNet architechture was chosen at first without any modifications at first, as it was described in the class and very simple architecture.
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+* What were some problems with the initial architecture?
+  It overfits training error 100% and testing goes to around 80% for 100 epochs with learning rate 0.001
+  
+* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+  Dropout layers were added with keep probability of 0.7, then I get validation accuracy of 94% with just 50 epochs
+  
+* Which parameters were tuned? How were they adjusted and why?
+  when I changed learning rate from 0.005 to 0.001 for 100 epochs I got validation accuracy from 94% to 95%. Also, my test accuracy increased from 91% to 94%.
  
+* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+ As observed dropout layers helps in removing overfitting.
 
 ### Test a Model on New Images
 
@@ -116,7 +119,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/add_pics/3.jpg)
 ![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/add_pics/34.jpg)
 
-The first image might be difficult to classify because ...
+First two images are distinct from other signs because of the shape of plate. So they are easy. But other signs are on round plates, which are difficult.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -131,7 +134,7 @@ Here are the results of the prediction:
 | Stop			| Stop      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -149,9 +152,11 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
+### (Optional) Visualizing the Neural Network 
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 ![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/visualize.png)
+
+In the visualization of the convolution layers, I found few feature blocks remained dark all the time when the learning rate is 0.005. When I decreased learning rate to 0.001, the performance increased and the feature layers are trained and visible.
 
 
