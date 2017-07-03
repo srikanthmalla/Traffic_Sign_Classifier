@@ -2,6 +2,8 @@
 ---
 ### Data Set Summary & Exploration
 
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/images.png)
+
 #### 1. Provide a basic summary of the data set.
 I numpy library to calculate summary statistics of the traffic
 signs data set and plotted using matplotlib to see the data distribution (which is not uniformly distributed for all classes):
@@ -15,13 +17,13 @@ signs data set and plotted using matplotlib to see the data distribution (which 
 #### 2. Include an exploratory visualization of the dataset.
 
 Histogram of data distribution over different classes:
-![alt text][image1]
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/dataset_histogram.png)
 
 Rotated with scipy library ndimage to create more data if the data set is less mean of the data which is 809,
 then the data distribution becomes:
 
 New Histogram of data distribution over different classes
-![alt text][image1]
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/histogram_augmented_dataset.png)
 
 ### Design and Test a Model Architecture
 
@@ -31,7 +33,7 @@ As a first step, I decided to convert the images to grayscale because the data f
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/gray.png)
 
 As a last step, I normalized the image data because normalized inputs are more reasonable than the unnormalized for the model to be more efficient.
 
@@ -41,7 +43,7 @@ To add more data to the the data set, I used the following techniques because wi
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/rotated.png)
 
 The difference between the original data set and the augmented data set is the following ... 
 
@@ -74,7 +76,7 @@ My final model consisted of the following layers:
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 Hyper parameters:
-Epochs=100
+Epochs=50
 Batch size=150
 Optimizer= Adam
 learning rate=0.001
@@ -83,9 +85,9 @@ when I changed learning rate from 0.005 to 0.001 for 100 epochs I got validation
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of 95 
-* test set accuracy of 94
+* training set accuracy of 99.9
+* validation set accuracy of 94.9
+* test set accuracy of 93.58
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -106,8 +108,11 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/add_pics/13.jpg)
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/add_pics/14.jpg)
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/add_pics/25.jpg)
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/add_pics/3.jpg)
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/add_pics/34.jpg)
 
 The first image might be difficult to classify because ...
 
@@ -117,11 +122,11 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Yield     		| Yield 									| 
+| General caution     			| Road work									|
+| Keep right					| Turn left ahead											|
+| No passing for vechiles over 3.5 metric tons     		| Speed limit (60km/h)				 				|
+| Stop			| Stop      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
@@ -141,9 +146,9 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 | .01				    | Slippery Road      							|
 
 
-For the second image ... 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+![alt text](https://github.com/srikanthmalla/Traffic_Sign_Classifier/blob/master/visualize.png)
 
 
